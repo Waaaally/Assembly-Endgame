@@ -1,0 +1,156 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+  background-color: #262626;
+  color: #d9d9d9;
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.result {
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.result > h2 {
+  margin: 5px;
+}
+
+.result > p {
+  margin: 5px;
+}
+
+.result.lost {
+  background-color: red;
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.result.won {
+  background-color: green;
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.result.farewell {
+  background-color: purple;
+  border: 1px dashed #323232;
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+  padding: 33px;
+}
+
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.singleLanguage,
+.deadLanguage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  padding: 4px;
+  margin: 2px;
+  height: 32px;
+  width: 80px;
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+.skull-emoji {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  font-size: 1.7rem;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.language-name {
+  z-index: 1;
+  transition: opacity 0.2s;
+}
+
+.language-name.dead {
+  opacity: 0.3;
+}
+
+.guessWord {
+  height: 50px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.guessWord > span {
+  background-color: rgb(29, 28, 28);
+  border-bottom: 3px solid rgb(109, 112, 110);
+  margin: 0.1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.7rem;
+  line-height: 2.5rem;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  margin: 50px auto;
+  max-width: 386px;
+}
+
+.keyboard > button {
+  height: 35px;
+  width: 35px;
+  background-color: rgb(233, 177, 72);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+section.keyboard > button.correct {
+  background-color: rgb(0, 255, 0);
+}
+
+section.keyboard > button.wrong {
+  background-color: rgb(255, 0, 0);
+}
+
+.keyboard > button.missed {
+  background-color: rgb(255, 0, 0);
+}
+
+.newGame {
+  background-color: rgb(0, 140, 255);
+  padding: 10px 50px;
+  display: block;
+  margin-inline: auto;
+  cursor: pointer;
+}
